@@ -1,2 +1,4 @@
 fastapi[standard]==0.141.1
 aiofiles==25.1.0
+python-multipart==0.0.32
+Pillow==11.3.0

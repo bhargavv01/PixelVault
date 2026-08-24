@@ -5,6 +5,7 @@ import logging
 from fastapi import FastAPI
 import uvicorn
 
+from app.routes.photos import router as photos_router
 from app.storage.index import IndexStore
 from app.storage.log_writer import LogWriter
 
@@ -46,6 +47,8 @@ app = FastAPI(
     version="0.1.0",
     lifespan=lifespan,
 )
+
+app.include_router(photos_router)
 
 
 @app.get("/health")
