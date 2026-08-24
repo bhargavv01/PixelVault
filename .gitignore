@@ -1,0 +1,29 @@
+# Virtual environment
+.venv/
+
+# Python cache & build
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Temporary and local storage
+tmp/
+/storage/tmp/
+/storage/blobs/
+/storage/logs/
+/storage/thumbs/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
