@@ -12,9 +12,10 @@ import io
 import logging
 import os
 
-from fastapi import APIRouter, HTTPException, Request, UploadFile
+from fastapi import APIRouter, BackgroundTasks, HTTPException, Request, UploadFile
 from fastapi.responses import FileResponse
 
+from app.services.thumbnail import STORAGE_ROOT, process_thumbnail_task
 from app.services.upload import BLOB_DIR, process_upload
 from app.storage.models import PhotoMeta
 
@@ -48,12 +49,17 @@ def _infer_media_type(blob_path: str) -> str:
 
 
 @router.post("/photos", status_code=201)
-async def upload_photo(request: Request, file: UploadFile):
+async def upload_photo(
+    request: Request,
+    file: UploadFile,
+    background_tasks: BackgroundTasks,
+):
     """Upload a photo via multipart/form-data.
 
     The file is streamed to a temp location, hashed, deduplicated,
     committed to the blob store, and indexed — all in a single
-    background thread.
+    background thread.  On success, a background task is enqueued
+    to generate a thumbnail and persist its path to the log.
 
     Returns:
         201 Created + PhotoMeta JSON for new uploads.
@@ -78,6 +84,14 @@ async def upload_photo(request: Request, file: UploadFile):
         raise HTTPException(status_code=422, detail=str(exc))
 
     if is_new:
+        # Enqueue background thumbnail generation (runs after response)
+        background_tasks.add_task(
+            process_thumbnail_task,
+            meta.photo_id,
+            meta.content_hash,
+            index,
+            log_writer,
+        )
         return meta.model_dump(mode="json")
 
     # Duplicate — override the default 201 with 200
@@ -191,3 +205,51 @@ async def list_photos(
         "offset": offset,
         "limit": limit,
     }
+
+
+# ── GET /photos/{photo_id}/thumbnail — Thumbnail Delivery ───────────
+
+
+@router.get("/photos/{photo_id}/thumbnail")
+async def get_photo_thumbnail(request: Request, photo_id: str):
+    """Serve the thumbnail image for a photo.
+
+    Looks up ``thumbnail_paths[0]`` from the in-memory index and
+    resolves it to an absolute path under ``/storage/``.
+
+    Returns:
+        200 OK + JPEG thumbnail binary.
+        404 Not Found if photo doesn't exist or thumbnail not yet generated.
+    """
+    index = request.app.state.index
+    meta = index.get(photo_id)
+
+    if meta is None:
+        raise HTTPException(status_code=404, detail="Photo not found.")
+
+    if not meta.thumbnail_paths:
+        raise HTTPException(
+            status_code=404,
+            detail="Thumbnail not yet generated.",
+        )
+
+    # Resolve relative path (e.g. "thumbs/<hash>_400.jpg") to absolute
+    thumb_abs_path = os.path.join(STORAGE_ROOT, meta.thumbnail_paths[0])
+
+    # Defensive check — file should exist if thumbnail_paths is populated
+    if not os.path.isfile(thumb_abs_path):
+        logger.error(
+            "Thumbnail file missing for photo_id=%s, path=%s",
+            photo_id,
+            thumb_abs_path,
+        )
+        raise HTTPException(
+            status_code=404,
+            detail="Thumbnail file not found on disk.",
+        )
+
+    return FileResponse(
+        path=thumb_abs_path,
+        media_type="image/jpeg",
+        filename=f"{photo_id}_thumb.jpg",
+    )
