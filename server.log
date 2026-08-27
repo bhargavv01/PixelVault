@@ -24177,3 +24177,803 @@ INFO:     127.0.0.1:53088 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:47766 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:50794 - "GET /health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:46024 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51024 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59100 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33348 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33918 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42626 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49550 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49550 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49550 - "GET /static/css/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49560 - "GET /static/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:49560 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49550 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49550 - "GET /photos/e6fbee7d-7686-4f57-9f23-27c231898653/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49560 - "GET /photos/c85c38cb-a7e8-409d-8099-0827c0bf9122/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49550 - "GET /photos/89e4ba8a-830a-4c74-8e65-dd0c9658cdd1/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49560 - "GET /photos/55c524d4-08de-4e63-a191-901044aa54ab/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49550 - "GET /photos/85f808a6-c3c3-4418-8efb-bdd91f77e010/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49562 - "GET /photos/568265ef-7fbb-4178-bdb0-6db214a4281d/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49560 - "GET /photos/945301c8-6116-4a34-b4d0-a533c6d4d851/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49574 - "GET /photos/6daad425-976a-4b21-bb7c-b0f89b6de70d/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49588 - "GET /photos/f6950e66-b807-4284-b53d-82b16077c7af/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49578 - "GET /photos/cc7e13e4-9921-4a9e-a181-d3c9ef9f6a0b/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49550 - "GET /photos/1b533ad4-187d-46a9-b123-2f0c7ec30f4e/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49562 - "GET /photos/693b4fff-13ef-4256-a66f-960d57f858fe/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49560 - "GET /photos/28a27603-e65a-46fb-80e1-20a00d9e004a/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49574 - "GET /photos/1381ed38-f08c-4fb0-a8c2-51f78a96a68a/thumbnail HTTP/1.1" 200 OK
+2026-08-27 14:28:29,263 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     127.0.0.1:49588 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:28:29,264 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     127.0.0.1:49578 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:28:29,277 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     127.0.0.1:49550 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:28:29,281 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     127.0.0.1:49562 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:28:29,293 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     127.0.0.1:49574 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:28:29,295 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     127.0.0.1:49588 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+2026-08-27 14:28:29,296 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     127.0.0.1:49550 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:28:29,298 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     127.0.0.1:49578 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:28:29,299 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     127.0.0.1:49560 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:28:29,300 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     127.0.0.1:49562 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:28:29,309 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     127.0.0.1:49574 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:28:29,316 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     127.0.0.1:49588 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33564 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33578 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+2026-08-27 14:30:10,773 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     127.0.0.1:33564 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33578 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+2026-08-27 14:30:10,783 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     127.0.0.1:33564 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:10,784 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     127.0.0.1:33578 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:10,792 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     127.0.0.1:33578 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:10,803 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     127.0.0.1:57676 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:10,809 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     127.0.0.1:57682 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:10,812 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     127.0.0.1:57692 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:10,816 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     127.0.0.1:57676 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:10,819 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     127.0.0.1:57698 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:10,831 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     127.0.0.1:57676 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:10,834 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     127.0.0.1:57692 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:10,836 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     127.0.0.1:57698 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57702 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37958 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51896 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.54:41334 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.29.54:41334 - "GET /static/css/style.css HTTP/1.1" 304 Not Modified
+INFO:     192.168.29.54:41334 - "GET /static/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     192.168.29.54:41334 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.54:41344 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+INFO:     192.168.29.54:41344 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     192.168.29.54:41334 - "GET /photos/e6fbee7d-7686-4f57-9f23-27c231898653/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.54:41350 - "GET /photos/c85c38cb-a7e8-409d-8099-0827c0bf9122/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.54:41362 - "GET /photos/6daad425-976a-4b21-bb7c-b0f89b6de70d/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.54:41378 - "GET /photos/f6950e66-b807-4284-b53d-82b16077c7af/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.54:41344 - "GET /photos/568265ef-7fbb-4178-bdb0-6db214a4281d/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.54:41334 - "GET /photos/cc7e13e4-9921-4a9e-a181-d3c9ef9f6a0b/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.54:41390 - "GET /photos/89e4ba8a-830a-4c74-8e65-dd0c9658cdd1/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.54:41390 - "GET /photos/55c524d4-08de-4e63-a191-901044aa54ab/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.54:41344 - "GET /photos/85f808a6-c3c3-4418-8efb-bdd91f77e010/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.54:41378 - "GET /photos/1381ed38-f08c-4fb0-a8c2-51f78a96a68a/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.54:41350 - "GET /photos/945301c8-6116-4a34-b4d0-a533c6d4d851/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.54:41362 - "GET /photos/1b533ad4-187d-46a9-b123-2f0c7ec30f4e/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.54:41334 - "GET /photos/28a27603-e65a-46fb-80e1-20a00d9e004a/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.54:41390 - "GET /photos/693b4fff-13ef-4256-a66f-960d57f858fe/thumbnail HTTP/1.1" 200 OK
+2026-08-27 14:30:43,073 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     192.168.29.54:41378 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:43,077 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     192.168.29.54:41350 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:43,079 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     192.168.29.54:41344 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:43,081 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     192.168.29.54:41334 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:43,082 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     192.168.29.54:41362 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:43,099 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     192.168.29.54:41362 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:43,108 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     192.168.29.54:41334 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:43,111 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     192.168.29.54:41350 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:43,114 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     192.168.29.54:41344 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:43,117 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     192.168.29.54:41378 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+INFO:     192.168.29.54:41378 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.29.54:41378 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.54:41344 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+2026-08-27 14:30:44,836 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     192.168.29.54:41344 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:44,848 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     192.168.29.54:41378 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:44,851 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     192.168.29.54:41350 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:44,854 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     192.168.29.54:41334 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:44,856 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     192.168.29.54:41362 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:44,859 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     192.168.29.54:41344 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:44,864 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     192.168.29.54:41378 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:44,889 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     192.168.29.54:41378 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:44,893 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     192.168.29.54:41344 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:30:44,896 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     192.168.29.54:41350 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37882 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.54:42184 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50922 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.54:52448 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46598 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.54:39066 - "GET /health HTTP/1.1" 200 OK
+2026-08-27 14:31:20,029 [INFO] pixel_vault.services.upload: CAS commit: /storage/tmp/9fc09859-0ad5-4195-99f4-834646921c6d.tmp → /storage/blobs/7e5d1f31b0d30e985bdd280c41b12da1042160c7487a8d55ff8a59dc74bbfc32
+2026-08-27 14:31:20,088 [INFO] pixel_vault.services.upload: Upload complete: photo_id=32fd7fc4-294f-4579-b9e6-aa6475fe43dc, hash=7e5d1f31b0d30e985bdd280c41b12da1042160c7487a8d55ff8a59dc74bbfc32, segment=segment_0001.log
+INFO:     192.168.29.54:39066 - "POST /photos HTTP/1.1" 201 Created
+INFO:     192.168.29.54:39066 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52080 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.54:39066 - "GET /photos/32fd7fc4-294f-4579-b9e6-aa6475fe43dc/file HTTP/1.1" 200 OK
+2026-08-27 14:31:20,197 [INFO] pixel_vault.services.thumbnail: Thumbnail generated: thumbs/7e5d1f31b0d30e985bdd280c41b12da1042160c7487a8d55ff8a59dc74bbfc32_400.jpg (400x225)
+2026-08-27 14:31:20,205 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     192.168.29.54:34478 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:20,206 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     192.168.29.54:34492 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:20,207 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     192.168.29.54:34508 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:20,208 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     192.168.29.54:34510 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:20,215 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     192.168.29.54:34514 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:20,244 [INFO] pixel_vault.services.thumbnail: Thumbnail metadata persisted: photo_id=32fd7fc4-294f-4579-b9e6-aa6475fe43dc, thumb=thumbs/7e5d1f31b0d30e985bdd280c41b12da1042160c7487a8d55ff8a59dc74bbfc32_400.jpg, segment=segment_0001.log
+2026-08-27 14:31:20,319 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     192.168.29.54:34508 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:20,361 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     192.168.29.54:34478 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:20,415 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     192.168.29.54:34478 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:20,416 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     192.168.29.54:34508 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:20,422 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     192.168.29.54:34514 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+INFO:     192.168.29.54:39066 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41826 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41826 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41840 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41840 - "GET /photos/32fd7fc4-294f-4579-b9e6-aa6475fe43dc/thumbnail HTTP/1.1" 200 OK
+2026-08-27 14:31:28,796 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     127.0.0.1:41826 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:28,818 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     127.0.0.1:41826 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:28,822 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     127.0.0.1:41840 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:28,831 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     127.0.0.1:41826 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:28,858 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     127.0.0.1:41854 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:28,862 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     127.0.0.1:41862 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:28,865 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     127.0.0.1:41876 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:28,871 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     127.0.0.1:41884 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:28,898 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     127.0.0.1:41854 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:28,901 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     127.0.0.1:41862 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:28,939 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     127.0.0.1:41862 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:31:28,943 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     127.0.0.1:41876 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41876 - "GET /photos/32fd7fc4-294f-4579-b9e6-aa6475fe43dc/file HTTP/1.1" 200 OK
+INFO:     192.168.29.54:53436 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44108 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44108 - "GET /photos/32fd7fc4-294f-4579-b9e6-aa6475fe43dc/file HTTP/1.1" 200 OK
+INFO:     192.168.29.54:48658 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49758 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45866 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36674 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56312 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57330 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43810 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53096 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.54:39524 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.54:39524 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.54:39524 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.54:39524 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.54:39524 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.54:39524 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.54:39524 - "GET /health HTTP/1.1" 200 OK
+2026-08-27 14:34:09,528 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     192.168.29.54:39524 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+2026-08-27 14:34:09,555 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     192.168.29.54:39524 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+INFO:     192.168.29.54:34102 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.54:34102 - "GET /photos/1381ed38-f08c-4fb0-a8c2-51f78a96a68a/file HTTP/1.1" 200 OK
+INFO:     192.168.29.54:57024 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52522 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52528 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51868 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40724 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57824 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60970 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48604 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35064 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57654 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55740 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41732 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41732 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52800 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52800 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52808 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52808 - "GET /photos/32fd7fc4-294f-4579-b9e6-aa6475fe43dc/thumbnail HTTP/1.1" 200 OK
+2026-08-27 14:38:25,608 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     127.0.0.1:52800 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:25,637 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     127.0.0.1:52800 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:25,641 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     127.0.0.1:52808 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:25,657 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     127.0.0.1:52808 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:25,680 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     127.0.0.1:52822 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:25,686 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     127.0.0.1:52838 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:25,690 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     127.0.0.1:52844 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:25,694 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     127.0.0.1:52822 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:25,696 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     127.0.0.1:52846 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:25,699 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     127.0.0.1:52838 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:25,708 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     127.0.0.1:52846 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:25,712 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     127.0.0.1:52838 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:43402 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.192:55241 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.29.192:55241 - "GET /static/css/style.css HTTP/1.1" 304 Not Modified
+INFO:     192.168.29.192:55241 - "GET /static/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     192.168.29.192:55241 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.192:54008 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+INFO:     192.168.29.192:54008 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     192.168.29.192:54008 - "GET /photos/32fd7fc4-294f-4579-b9e6-aa6475fe43dc/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.192:55241 - "GET /photos/e6fbee7d-7686-4f57-9f23-27c231898653/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.192:51854 - "GET /photos/c85c38cb-a7e8-409d-8099-0827c0bf9122/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.192:49183 - "GET /photos/6daad425-976a-4b21-bb7c-b0f89b6de70d/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.192:64261 - "GET /photos/568265ef-7fbb-4178-bdb0-6db214a4281d/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.192:57758 - "GET /photos/f6950e66-b807-4284-b53d-82b16077c7af/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.192:55241 - "GET /photos/cc7e13e4-9921-4a9e-a181-d3c9ef9f6a0b/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.192:54008 - "GET /photos/89e4ba8a-830a-4c74-8e65-dd0c9658cdd1/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.192:57758 - "GET /photos/85f808a6-c3c3-4418-8efb-bdd91f77e010/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.192:55241 - "GET /photos/55c524d4-08de-4e63-a191-901044aa54ab/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.192:64261 - "GET /photos/945301c8-6116-4a34-b4d0-a533c6d4d851/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.192:51854 - "GET /photos/28a27603-e65a-46fb-80e1-20a00d9e004a/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.192:54008 - "GET /photos/1b533ad4-187d-46a9-b123-2f0c7ec30f4e/thumbnail HTTP/1.1" 200 OK
+2026-08-27 14:38:41,473 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     192.168.29.192:55241 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+INFO:     192.168.29.192:49183 - "GET /photos/1381ed38-f08c-4fb0-a8c2-51f78a96a68a/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.192:57758 - "GET /photos/693b4fff-13ef-4256-a66f-960d57f858fe/thumbnail HTTP/1.1" 200 OK
+2026-08-27 14:38:41,487 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     192.168.29.192:55241 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:41,508 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     192.168.29.192:54008 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:41,513 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     192.168.29.192:57758 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:41,515 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     192.168.29.192:51854 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:41,517 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     192.168.29.192:64261 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:41,518 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     192.168.29.192:49183 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:41,520 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     192.168.29.192:55241 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:41,521 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     192.168.29.192:54008 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:41,526 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     192.168.29.192:51854 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:41,528 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     192.168.29.192:57758 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:41,531 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     192.168.29.192:54008 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+INFO:     192.168.29.192:59117 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.146:56200 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.29.146:56200 - "GET /static/css/style.css HTTP/1.1" 200 OK
+INFO:     192.168.29.146:56212 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     192.168.29.146:56212 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.146:56200 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+INFO:     192.168.29.146:56200 - "GET /photos/32fd7fc4-294f-4579-b9e6-aa6475fe43dc/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.146:56212 - "GET /photos/e6fbee7d-7686-4f57-9f23-27c231898653/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.146:56200 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     192.168.29.146:56214 - "GET /photos/c85c38cb-a7e8-409d-8099-0827c0bf9122/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.146:56220 - "GET /photos/6daad425-976a-4b21-bb7c-b0f89b6de70d/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.146:56236 - "GET /photos/f6950e66-b807-4284-b53d-82b16077c7af/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.146:56246 - "GET /photos/568265ef-7fbb-4178-bdb0-6db214a4281d/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.146:56212 - "GET /photos/cc7e13e4-9921-4a9e-a181-d3c9ef9f6a0b/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.146:56200 - "GET /photos/89e4ba8a-830a-4c74-8e65-dd0c9658cdd1/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.146:56212 - "GET /photos/55c524d4-08de-4e63-a191-901044aa54ab/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.146:56236 - "GET /photos/85f808a6-c3c3-4418-8efb-bdd91f77e010/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.146:56246 - "GET /photos/945301c8-6116-4a34-b4d0-a533c6d4d851/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.146:56220 - "GET /photos/1b533ad4-187d-46a9-b123-2f0c7ec30f4e/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.146:56200 - "GET /photos/28a27603-e65a-46fb-80e1-20a00d9e004a/thumbnail HTTP/1.1" 200 OK
+INFO:     192.168.29.146:56214 - "GET /photos/1381ed38-f08c-4fb0-a8c2-51f78a96a68a/thumbnail HTTP/1.1" 200 OK
+2026-08-27 14:38:57,528 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     192.168.29.146:56212 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:57,530 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     192.168.29.146:56200 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:57,533 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     192.168.29.146:56214 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+INFO:     192.168.29.146:56236 - "GET /photos/693b4fff-13ef-4256-a66f-960d57f858fe/thumbnail HTTP/1.1" 200 OK
+2026-08-27 14:38:57,544 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     192.168.29.146:56214 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:57,548 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     192.168.29.146:56200 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:38:57,551 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     192.168.29.146:56236 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+INFO:     192.168.29.192:54693 - "GET /health HTTP/1.1" 200 OK
+2026-08-27 14:39:01,781 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     192.168.29.146:56236 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:39:01,784 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     192.168.29.146:56200 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:39:01,799 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     192.168.29.146:56236 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:39:01,802 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     192.168.29.146:56200 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+INFO:     192.168.29.146:41908 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.192:57837 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.146:48588 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.192:58891 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.146:58026 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.192:55667 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.146:47848 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.192:54964 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.146:39154 - "GET /health HTTP/1.1" 200 OK
+2026-08-27 14:39:50,542 [INFO] pixel_vault.services.upload: CAS commit: /storage/tmp/a0fa6b38-90ab-42a0-b6ba-9f3e581cd88d.tmp → /storage/blobs/666ac904ea23f8641b706924b47b8db717194cbd1150af963283ee91349a2f29
+2026-08-27 14:39:50,543 [WARNING] pixel_vault.services.exif: Failed to parse GPS coordinates: division by zero
+2026-08-27 14:39:50,598 [INFO] pixel_vault.services.upload: Upload complete: photo_id=50b077b1-3789-4c50-880e-c4d954e335cf, hash=666ac904ea23f8641b706924b47b8db717194cbd1150af963283ee91349a2f29, segment=segment_0001.log
+INFO:     192.168.29.146:39154 - "POST /photos HTTP/1.1" 201 Created
+INFO:     192.168.29.146:39154 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+INFO:     192.168.29.146:39154 - "GET /photos/50b077b1-3789-4c50-880e-c4d954e335cf/file HTTP/1.1" 200 OK
+2026-08-27 14:39:50,663 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     192.168.29.146:57290 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:39:50,669 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     192.168.29.146:57292 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:39:50,682 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     192.168.29.146:57290 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:39:50,689 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     192.168.29.146:57292 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:39:50,713 [INFO] pixel_vault.services.thumbnail: Thumbnail generated: thumbs/666ac904ea23f8641b706924b47b8db717194cbd1150af963283ee91349a2f29_400.jpg (400x300)
+2026-08-27 14:39:50,765 [INFO] pixel_vault.services.thumbnail: Thumbnail metadata persisted: photo_id=50b077b1-3789-4c50-880e-c4d954e335cf, thumb=thumbs/666ac904ea23f8641b706924b47b8db717194cbd1150af963283ee91349a2f29_400.jpg, segment=segment_0001.log
+INFO:     192.168.29.192:61922 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.192:61922 - "GET / HTTP/1.1" 200 OK
+INFO:     192.168.29.192:61922 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.192:50604 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+INFO:     192.168.29.192:50604 - "GET /photos/32fd7fc4-294f-4579-b9e6-aa6475fe43dc/thumbnail HTTP/1.1" 200 OK
+2026-08-27 14:39:56,227 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     192.168.29.192:50604 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+INFO:     192.168.29.192:61922 - "GET /photos/50b077b1-3789-4c50-880e-c4d954e335cf/thumbnail HTTP/1.1" 200 OK
+2026-08-27 14:39:56,232 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     192.168.29.192:53985 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:39:56,236 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     192.168.29.192:51474 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:39:56,240 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     192.168.29.192:50604 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+2026-08-27 14:39:56,242 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     192.168.29.192:50115 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:39:56,246 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     192.168.29.192:53985 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:39:56,248 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     192.168.29.192:65534 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:39:56,251 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     192.168.29.192:51474 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:39:56,253 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     192.168.29.192:50604 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:39:56,255 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     192.168.29.192:50115 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:39:56,257 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     192.168.29.192:65534 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+INFO:     192.168.29.146:57308 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.192:61922 - "GET /photos/50b077b1-3789-4c50-880e-c4d954e335cf/file HTTP/1.1" 200 OK
+INFO:     192.168.29.192:54240 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.146:57268 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.192:59689 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.192:59689 - "GET /photos/50b077b1-3789-4c50-880e-c4d954e335cf/file HTTP/1.1" 200 OK
+INFO:     192.168.29.146:50928 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.192:55666 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.146:50334 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.192:57616 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.192:59932 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.192:64097 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.192:50390 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.192:63938 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.192:57066 - "GET /health HTTP/1.1" 200 OK
+INFO:     192.168.29.192:56920 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42086 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42086 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57980 - "GET /photos/6daad425-976a-4b21-bb7c-b0f89b6de70d/file HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57980 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54366 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34868 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34868 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34868 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34868 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34868 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34884 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34884 - "GET /photos/32fd7fc4-294f-4579-b9e6-aa6475fe43dc/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34868 - "GET /photos/50b077b1-3789-4c50-880e-c4d954e335cf/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39014 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57360 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57360 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57360 - "GET /static/css/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57376 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57390 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57376 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57390 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57390 - "GET /photos/50b077b1-3789-4c50-880e-c4d954e335cf/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57360 - "GET /photos/e6fbee7d-7686-4f57-9f23-27c231898653/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57376 - "GET /photos/32fd7fc4-294f-4579-b9e6-aa6475fe43dc/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57390 - "GET /photos/568265ef-7fbb-4178-bdb0-6db214a4281d/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57360 - "GET /photos/cc7e13e4-9921-4a9e-a181-d3c9ef9f6a0b/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57376 - "GET /photos/89e4ba8a-830a-4c74-8e65-dd0c9658cdd1/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57404 - "GET /photos/c85c38cb-a7e8-409d-8099-0827c0bf9122/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57390 - "GET /photos/55c524d4-08de-4e63-a191-901044aa54ab/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57416 - "GET /photos/f6950e66-b807-4284-b53d-82b16077c7af/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57418 - "GET /photos/6daad425-976a-4b21-bb7c-b0f89b6de70d/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57418 - "GET /photos/85f808a6-c3c3-4418-8efb-bdd91f77e010/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57390 - "GET /photos/945301c8-6116-4a34-b4d0-a533c6d4d851/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57418 - "GET /photos/1b533ad4-187d-46a9-b123-2f0c7ec30f4e/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57390 - "GET /photos/28a27603-e65a-46fb-80e1-20a00d9e004a/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57418 - "GET /photos/693b4fff-13ef-4256-a66f-960d57f858fe/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57390 - "GET /photos/1381ed38-f08c-4fb0-a8c2-51f78a96a68a/thumbnail HTTP/1.1" 200 OK
+2026-08-27 14:42:51,597 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     127.0.0.1:57390 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:42:51,598 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     127.0.0.1:57418 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:42:51,625 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     127.0.0.1:57418 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:42:51,628 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     127.0.0.1:57390 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:42:51,985 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     127.0.0.1:57390 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:42:51,988 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     127.0.0.1:57418 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:42:52,014 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     127.0.0.1:57390 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:42:52,018 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     127.0.0.1:57418 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:42:52,051 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     127.0.0.1:57418 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:42:52,063 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     127.0.0.1:57418 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:42:52,450 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     127.0.0.1:57418 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+2026-08-27 14:42:52,467 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     127.0.0.1:57418 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35420 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35420 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35420 - "GET /static/css/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45594 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45604 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45604 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45594 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35420 - "GET /photos/e6fbee7d-7686-4f57-9f23-27c231898653/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45594 - "GET /photos/50b077b1-3789-4c50-880e-c4d954e335cf/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45604 - "GET /photos/32fd7fc4-294f-4579-b9e6-aa6475fe43dc/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45594 - "GET /photos/568265ef-7fbb-4178-bdb0-6db214a4281d/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45606 - "GET /photos/c85c38cb-a7e8-409d-8099-0827c0bf9122/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35420 - "GET /photos/89e4ba8a-830a-4c74-8e65-dd0c9658cdd1/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45604 - "GET /photos/cc7e13e4-9921-4a9e-a181-d3c9ef9f6a0b/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45594 - "GET /photos/55c524d4-08de-4e63-a191-901044aa54ab/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45622 - "GET /photos/6daad425-976a-4b21-bb7c-b0f89b6de70d/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45626 - "GET /photos/f6950e66-b807-4284-b53d-82b16077c7af/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59368 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59368 - "GET /photos/85f808a6-c3c3-4418-8efb-bdd91f77e010/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59374 - "GET /photos/945301c8-6116-4a34-b4d0-a533c6d4d851/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59374 - "GET /photos/1b533ad4-187d-46a9-b123-2f0c7ec30f4e/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59368 - "GET /photos/28a27603-e65a-46fb-80e1-20a00d9e004a/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59368 - "GET /photos/693b4fff-13ef-4256-a66f-960d57f858fe/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59374 - "GET /photos/1381ed38-f08c-4fb0-a8c2-51f78a96a68a/thumbnail HTTP/1.1" 200 OK
+2026-08-27 14:43:17,040 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     127.0.0.1:59384 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:43:17,048 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     127.0.0.1:59396 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:43:17,057 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     127.0.0.1:59384 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:43:17,066 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     127.0.0.1:59396 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:43:17,582 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     127.0.0.1:59396 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:43:17,583 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     127.0.0.1:59384 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:43:17,604 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     127.0.0.1:59384 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:43:17,607 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     127.0.0.1:59396 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:43:17,917 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     127.0.0.1:59396 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:43:17,946 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     127.0.0.1:59396 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:43:18,007 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     127.0.0.1:59396 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+2026-08-27 14:43:18,026 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     127.0.0.1:59396 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35782 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35782 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35782 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35788 - "GET /static/css/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35796 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35796 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35788 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35782 - "GET /photos/e6fbee7d-7686-4f57-9f23-27c231898653/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35788 - "GET /photos/50b077b1-3789-4c50-880e-c4d954e335cf/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35796 - "GET /photos/32fd7fc4-294f-4579-b9e6-aa6475fe43dc/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35796 - "GET /photos/568265ef-7fbb-4178-bdb0-6db214a4281d/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35812 - "GET /photos/c85c38cb-a7e8-409d-8099-0827c0bf9122/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35788 - "GET /photos/89e4ba8a-830a-4c74-8e65-dd0c9658cdd1/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35782 - "GET /photos/cc7e13e4-9921-4a9e-a181-d3c9ef9f6a0b/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35826 - "GET /photos/6daad425-976a-4b21-bb7c-b0f89b6de70d/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35796 - "GET /photos/55c524d4-08de-4e63-a191-901044aa54ab/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35842 - "GET /photos/f6950e66-b807-4284-b53d-82b16077c7af/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48220 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45434 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58402 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58886 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38664 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48470 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55166 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55166 - "GET /photos/85f808a6-c3c3-4418-8efb-bdd91f77e010/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55522 - "GET /photos/945301c8-6116-4a34-b4d0-a533c6d4d851/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55166 - "GET /photos/1381ed38-f08c-4fb0-a8c2-51f78a96a68a/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55524 - "GET /photos/1b533ad4-187d-46a9-b123-2f0c7ec30f4e/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55528 - "GET /photos/28a27603-e65a-46fb-80e1-20a00d9e004a/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55534 - "GET /photos/693b4fff-13ef-4256-a66f-960d57f858fe/thumbnail HTTP/1.1" 200 OK
+2026-08-27 14:44:42,609 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     127.0.0.1:55528 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:44:42,612 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     127.0.0.1:55534 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:44:42,624 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     127.0.0.1:55528 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:44:42,631 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     127.0.0.1:55534 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:44:42,651 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     127.0.0.1:55528 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:44:42,655 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     127.0.0.1:55534 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:44:42,669 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     127.0.0.1:55528 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:44:42,674 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     127.0.0.1:55534 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:44:42,993 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     127.0.0.1:55534 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:44:43,006 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     127.0.0.1:55534 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:44:43,021 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     127.0.0.1:55534 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+2026-08-27 14:44:43,035 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     127.0.0.1:55534 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55538 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48824 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48826 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48824 - "GET /static/css/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48832 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48824 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48832 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48824 - "GET /photos/32fd7fc4-294f-4579-b9e6-aa6475fe43dc/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48826 - "GET /photos/e6fbee7d-7686-4f57-9f23-27c231898653/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48832 - "GET /photos/50b077b1-3789-4c50-880e-c4d954e335cf/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48832 - "GET /photos/568265ef-7fbb-4178-bdb0-6db214a4281d/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48824 - "GET /photos/89e4ba8a-830a-4c74-8e65-dd0c9658cdd1/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48826 - "GET /photos/cc7e13e4-9921-4a9e-a181-d3c9ef9f6a0b/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48836 - "GET /photos/c85c38cb-a7e8-409d-8099-0827c0bf9122/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48840 - "GET /photos/f6950e66-b807-4284-b53d-82b16077c7af/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48832 - "GET /photos/55c524d4-08de-4e63-a191-901044aa54ab/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48854 - "GET /photos/6daad425-976a-4b21-bb7c-b0f89b6de70d/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37850 - "GET /photos/945301c8-6116-4a34-b4d0-a533c6d4d851/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37840 - "GET /photos/85f808a6-c3c3-4418-8efb-bdd91f77e010/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37840 - "GET /photos/28a27603-e65a-46fb-80e1-20a00d9e004a/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37850 - "GET /photos/1b533ad4-187d-46a9-b123-2f0c7ec30f4e/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37850 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37840 - "GET /photos/693b4fff-13ef-4256-a66f-960d57f858fe/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37850 - "GET /photos/1381ed38-f08c-4fb0-a8c2-51f78a96a68a/thumbnail HTTP/1.1" 200 OK
+2026-08-27 14:45:10,696 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     127.0.0.1:37840 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:45:10,700 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     127.0.0.1:37850 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:45:10,722 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     127.0.0.1:37840 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:45:10,725 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     127.0.0.1:37850 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:45:10,746 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     127.0.0.1:37840 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:45:10,749 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     127.0.0.1:37850 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:45:10,762 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     127.0.0.1:37850 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:45:10,766 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     127.0.0.1:37840 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:45:11,172 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     127.0.0.1:37840 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:45:11,187 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     127.0.0.1:37840 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:45:11,212 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     127.0.0.1:37840 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+2026-08-27 14:45:11,231 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     127.0.0.1:37840 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41326 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43460 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38936 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41394 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52522 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47514 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55834 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39092 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34220 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52238 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52238 - "GET /static/css/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52224 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52248 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52248 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52224 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52224 - "GET /photos/50b077b1-3789-4c50-880e-c4d954e335cf/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52248 - "GET /photos/32fd7fc4-294f-4579-b9e6-aa6475fe43dc/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52238 - "GET /photos/e6fbee7d-7686-4f57-9f23-27c231898653/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52248 - "GET /photos/568265ef-7fbb-4178-bdb0-6db214a4281d/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52238 - "GET /photos/cc7e13e4-9921-4a9e-a181-d3c9ef9f6a0b/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52224 - "GET /photos/89e4ba8a-830a-4c74-8e65-dd0c9658cdd1/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52248 - "GET /photos/55c524d4-08de-4e63-a191-901044aa54ab/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52250 - "GET /photos/c85c38cb-a7e8-409d-8099-0827c0bf9122/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52268 - "GET /photos/6daad425-976a-4b21-bb7c-b0f89b6de70d/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52260 - "GET /photos/f6950e66-b807-4284-b53d-82b16077c7af/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59204 - "GET /photos/85f808a6-c3c3-4418-8efb-bdd91f77e010/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59218 - "GET /photos/945301c8-6116-4a34-b4d0-a533c6d4d851/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59226 - "GET /photos/1b533ad4-187d-46a9-b123-2f0c7ec30f4e/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59228 - "GET /photos/28a27603-e65a-46fb-80e1-20a00d9e004a/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59228 - "GET /photos/1381ed38-f08c-4fb0-a8c2-51f78a96a68a/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59226 - "GET /photos/693b4fff-13ef-4256-a66f-960d57f858fe/thumbnail HTTP/1.1" 200 OK
+2026-08-27 14:46:52,555 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     127.0.0.1:59226 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:46:52,558 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     127.0.0.1:59228 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:46:52,586 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9, hash=f894eaf386d4e27d83459c328f149ed2e22b19eac638126218783c882dff1b14
+INFO:     127.0.0.1:59226 - "GET /photos/9a2bc3f9-fe46-4c52-9746-b2fffe62e2d9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:46:52,593 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0fb18683-00d3-4df3-893c-dd9cba752d7e, hash=498d65add2bad39fa3ed513a58330c6d9c93036961ee2fc1b365e759d45b68c1
+INFO:     127.0.0.1:59228 - "GET /photos/0fb18683-00d3-4df3-893c-dd9cba752d7e/file HTTP/1.1" 404 Not Found
+2026-08-27 14:46:52,963 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     127.0.0.1:59228 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:46:52,964 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     127.0.0.1:59226 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:46:52,984 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=5e9b6f34-6ed6-46a6-b050-691f75dde2a9, hash=02f3266d22333786627b3f8a1e36da7d8451d1967f19bffefbb57f402440b2af
+INFO:     127.0.0.1:59226 - "GET /photos/5e9b6f34-6ed6-46a6-b050-691f75dde2a9/file HTTP/1.1" 404 Not Found
+2026-08-27 14:46:52,986 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=4b6f942b-b05d-4ba0-8410-f2a02c2cc03b, hash=e878950f8091ec010cf5cc723bdea027a8539cf7147cfea199c2f666232dcd4e
+INFO:     127.0.0.1:59228 - "GET /photos/4b6f942b-b05d-4ba0-8410-f2a02c2cc03b/file HTTP/1.1" 404 Not Found
+2026-08-27 14:46:53,019 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     127.0.0.1:59226 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:46:53,040 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=0d002c75-9ed7-42dd-a770-fcf79be6ed2d, hash=9dacf9b93ef343cb1b10d45dcd84959c4448a68d0859d818cc3decfb7dbf619f
+INFO:     127.0.0.1:59226 - "GET /photos/0d002c75-9ed7-42dd-a770-fcf79be6ed2d/file HTTP/1.1" 404 Not Found
+2026-08-27 14:46:53,441 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     127.0.0.1:59226 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+2026-08-27 14:46:53,460 [ERROR] pixel_vault.routes.photos: Blob missing for photo_id=346b8a5b-d6c4-4019-ae24-ceef589f9502, hash=f7969467e0c55681a9df3fed8148539ec936f701902cbcc54c075342d46fbaa5
+INFO:     127.0.0.1:59226 - "GET /photos/346b8a5b-d6c4-4019-ae24-ceef589f9502/file HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59226 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46876 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51982 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46212 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59818 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43434 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33180 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56406 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38702 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37038 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34820 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45006 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32994 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35700 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52816 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48972 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33098 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33312 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53268 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50218 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53284 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48512 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34332 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42954 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40300 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57120 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50886 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58220 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59486 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44206 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60178 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41280 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43610 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53320 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38520 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55948 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33674 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59182 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55130 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55130 - "GET /photos/50b077b1-3789-4c50-880e-c4d954e335cf/file HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58392 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58392 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58392 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58392 - "GET /static/css/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58394 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58398 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58392 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58398 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58392 - "GET /photos/50b077b1-3789-4c50-880e-c4d954e335cf/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58398 - "GET /photos/32fd7fc4-294f-4579-b9e6-aa6475fe43dc/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58394 - "GET /photos/e6fbee7d-7686-4f57-9f23-27c231898653/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58392 - "GET /photos/568265ef-7fbb-4178-bdb0-6db214a4281d/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58394 - "GET /photos/89e4ba8a-830a-4c74-8e65-dd0c9658cdd1/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58398 - "GET /photos/cc7e13e4-9921-4a9e-a181-d3c9ef9f6a0b/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58412 - "GET /photos/6daad425-976a-4b21-bb7c-b0f89b6de70d/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58392 - "GET /photos/55c524d4-08de-4e63-a191-901044aa54ab/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58422 - "GET /photos/c85c38cb-a7e8-409d-8099-0827c0bf9122/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58432 - "GET /photos/f6950e66-b807-4284-b53d-82b16077c7af/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60628 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60628 - "GET /static/css/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60630 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60632 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60630 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60632 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60628 - "GET /photos/e6fbee7d-7686-4f57-9f23-27c231898653/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60630 - "GET /photos/32fd7fc4-294f-4579-b9e6-aa6475fe43dc/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60632 - "GET /photos/50b077b1-3789-4c50-880e-c4d954e335cf/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60638 - "GET /photos/c85c38cb-a7e8-409d-8099-0827c0bf9122/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60630 - "GET /photos/568265ef-7fbb-4178-bdb0-6db214a4281d/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60632 - "GET /photos/cc7e13e4-9921-4a9e-a181-d3c9ef9f6a0b/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60628 - "GET /photos/89e4ba8a-830a-4c74-8e65-dd0c9658cdd1/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60650 - "GET /photos/f6950e66-b807-4284-b53d-82b16077c7af/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60646 - "GET /photos/6daad425-976a-4b21-bb7c-b0f89b6de70d/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60628 - "GET /photos/55c524d4-08de-4e63-a191-901044aa54ab/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60628 - "GET /photos/50b077b1-3789-4c50-880e-c4d954e335cf/file HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50258 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52554 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41644 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41644 - "GET /static/css/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41650 - "GET /static/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41666 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:41650 - "GET /photos?offset=0&limit=200 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41666 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41650 - "GET /photos/50b077b1-3789-4c50-880e-c4d954e335cf/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41666 - "GET /photos/32fd7fc4-294f-4579-b9e6-aa6475fe43dc/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41644 - "GET /photos/e6fbee7d-7686-4f57-9f23-27c231898653/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41650 - "GET /photos/568265ef-7fbb-4178-bdb0-6db214a4281d/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41644 - "GET /photos/cc7e13e4-9921-4a9e-a181-d3c9ef9f6a0b/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41666 - "GET /photos/89e4ba8a-830a-4c74-8e65-dd0c9658cdd1/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41650 - "GET /photos/55c524d4-08de-4e63-a191-901044aa54ab/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41674 - "GET /photos/c85c38cb-a7e8-409d-8099-0827c0bf9122/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41688 - "GET /photos/f6950e66-b807-4284-b53d-82b16077c7af/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41692 - "GET /photos/6daad425-976a-4b21-bb7c-b0f89b6de70d/thumbnail HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41688 - "GET /photos/50b077b1-3789-4c50-880e-c4d954e335cf/file HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38954 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37436 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56154 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44372 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52930 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56830 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56830 - "GET /photos/50b077b1-3789-4c50-880e-c4d954e335cf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56830 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56836 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56836 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56836 - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 Not Found

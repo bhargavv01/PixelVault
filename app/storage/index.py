@@ -74,6 +74,27 @@ class IndexStore:
             return None
         return self._primary.get(photo_id)
 
+    def delete(self, photo_id: str) -> PhotoMeta | None:
+        """Remove a photo from the in-memory index.
+
+        Deletes the entry from both ``_primary`` and ``_hash_index``.
+        Thread-safe: guarded by the same lock as ``put()``.
+
+        Args:
+            photo_id: The photo to remove.
+
+        Returns:
+            The removed ``PhotoMeta``, or ``None`` if not found.
+        """
+        with self._lock:
+            meta = self._primary.pop(photo_id, None)
+            if meta is not None:
+                # Only remove from hash_index if it still points to this photo_id
+                # (another photo with the same hash could exist — edge case)
+                if self._hash_index.get(meta.content_hash) == photo_id:
+                    del self._hash_index[meta.content_hash]
+        return meta
+
     # ── Snapshot: save ────────────────────────────────────────────────
 
     def save_snapshot(

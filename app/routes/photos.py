@@ -1,4 +1,4 @@
-"""Photo API routes — upload, retrieval, listing.
+"""Photo API routes — upload, retrieval, listing, deletion.
 
 Thin route handlers that delegate business logic to the service layer
 and storage engine.  All heavy I/O is offloaded to a thread via
@@ -253,3 +253,73 @@ async def get_photo_thumbnail(request: Request, photo_id: str):
         media_type="image/jpeg",
         filename=f"{photo_id}_thumb.jpg",
     )
+
+
+# ── DELETE /photos/{photo_id} — Soft-Delete ─────────────────────────
+
+
+def _delete_files_from_disk(content_hash: str, thumbnail_paths: list[str]) -> None:
+    """Remove the blob and thumbnail files from disk.
+
+    Best-effort: logs warnings on failure but never raises.
+    Called in a background thread to avoid blocking the event loop.
+    """
+    # Delete the blob
+    blob_path = os.path.join(BLOB_DIR, content_hash)
+    try:
+        if os.path.isfile(blob_path):
+            os.remove(blob_path)
+            logger.info("Deleted blob: %s", blob_path)
+    except OSError as exc:
+        logger.warning("Failed to delete blob %s: %s", blob_path, exc)
+
+    # Delete thumbnails
+    for thumb_rel in thumbnail_paths:
+        thumb_abs = os.path.join(STORAGE_ROOT, thumb_rel)
+        try:
+            if os.path.isfile(thumb_abs):
+                os.remove(thumb_abs)
+                logger.info("Deleted thumbnail: %s", thumb_abs)
+        except OSError as exc:
+            logger.warning("Failed to delete thumbnail %s: %s", thumb_abs, exc)
+
+
+@router.delete("/photos/{photo_id}", status_code=200)
+async def delete_photo(request: Request, photo_id: str):
+    """Delete a photo by ID.
+
+    Writes a tombstone record to the log (so compaction can reclaim space),
+    removes the photo from the in-memory index, and deletes the blob and
+    thumbnail files from disk.
+
+    Write ordering: log append (tombstone) → index delete → disk cleanup.
+
+    Returns:
+        200 OK with the deleted photo's metadata.
+        404 Not Found if photo_id doesn't exist.
+    """
+    index = request.app.state.index
+    log_writer = request.app.state.log_writer
+
+    meta = index.get(photo_id)
+    if meta is None:
+        raise HTTPException(status_code=404, detail="Photo not found.")
+
+    # 1. Build tombstone record — a copy of the current metadata with tombstone=True
+    tombstone = meta.model_copy(update={"tombstone": True})
+
+    # 2. Append tombstone to the log (preserves write-ordering invariant)
+    await asyncio.to_thread(log_writer.append, tombstone)
+
+    # 3. Remove from in-memory index
+    index.delete(photo_id)
+
+    # 4. Delete blob + thumbnails from disk (best-effort, in background thread)
+    await asyncio.to_thread(
+        _delete_files_from_disk, meta.content_hash, meta.thumbnail_paths
+    )
+
+    logger.info("Deleted photo: photo_id=%s, hash=%s", photo_id, meta.content_hash)
+
+    return {"status": "deleted", "photo": meta.model_dump(mode="json")}
+
