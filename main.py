@@ -2,7 +2,11 @@ import asyncio
 from contextlib import asynccontextmanager
 import logging
 
+import os
+
 from fastapi import FastAPI
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 import uvicorn
 
 from app.routes.admin import router as admin_router
@@ -15,6 +19,8 @@ logging.basicConfig(
     format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
 )
 logger = logging.getLogger("pixel_vault")
+
+STATIC_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "static")
 
 
 @asynccontextmanager
@@ -62,6 +68,19 @@ app = FastAPI(
 
 app.include_router(photos_router)
 app.include_router(admin_router)
+
+# Mount static asset files (CSS, JS, icons)
+if os.path.isdir(STATIC_DIR):
+    app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+
+
+@app.api_route("/", methods=["GET", "HEAD"], include_in_schema=False)
+async def serve_frontend():
+    """Serve the single-page application frontend."""
+    index_file = os.path.join(STATIC_DIR, "index.html")
+    if os.path.isfile(index_file):
+        return FileResponse(index_file)
+    return {"message": "Pixel Vault API is running. Frontend not found."}
 
 
 @app.get("/health")

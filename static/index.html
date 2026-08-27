@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#080c14">
+  <meta name="description" content="Pixel Vault — High-performance, private photo cloud powered by Bitcask and Content-Addressed Storage.">
+  <title>Pixel Vault — Private Photo Cloud</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div id="app-root">
+    <!-- Top Header Navigation -->
+    <header class="navbar" id="main-navbar">
+      <div class="nav-left">
+        <div class="brand" id="brand-logo">
+          <div class="brand-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <circle cx="12" cy="11" r="3"/>
+            </svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">Pixel Vault</span>
+            <span class="brand-subtitle">Bitcask CAS Storage</span>
+          </div>
+        </div>
+
+        <div class="server-status" id="server-status" title="Server Status">
+          <span class="status-dot"></span>
+          <span class="status-label" id="status-label">Connecting...</span>
+        </div>
+      </div>
+
+      <!-- Search & Filters (Desktop & Tablet) -->
+      <div class="nav-center">
+        <div class="search-box" id="search-container">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="text" id="search-input" placeholder="Search camera, hash, or date..." autocomplete="off" spellcheck="false">
+          <button id="search-clear-btn" class="icon-btn search-clear hidden" title="Clear search">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Desktop Nav Actions -->
+      <div class="nav-right">
+        <!-- Sort Dropdown -->
+        <div class="select-wrapper">
+          <select id="sort-select" class="custom-select" title="Sort Photos">
+            <option value="taken_desc">Date Taken (Newest)</option>
+            <option value="taken_asc">Date Taken (Oldest)</option>
+            <option value="upload_desc">Recently Uploaded</option>
+          </select>
+        </div>
+
+        <!-- Admin Ops Trigger -->
+        <button id="admin-modal-btn" class="btn btn-secondary" title="Storage Engine Operations">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+            <line x1="6" y1="6" x2="6.01" y2="6"/>
+            <line x1="6" y1="18" x2="6.01" y2="18"/>
+          </svg>
+          <span class="desktop-only">Engine Ops</span>
+        </button>
+
+        <!-- Primary Upload Trigger -->
+        <button id="upload-btn" class="btn btn-primary" title="Upload Photos">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+          <span>Upload</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="main-layout" id="main-layout">
+      <!-- Mobile Search Bar -->
+      <div class="mobile-search-bar" id="mobile-search-bar">
+        <div class="search-box">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="text" id="mobile-search-input" placeholder="Search camera or hash..." autocomplete="off">
+        </div>
+      </div>
+
+      <!-- Stats Bar / Quick Filters -->
+      <section class="gallery-toolbar" id="gallery-toolbar">
+        <div class="gallery-stats">
+          <span class="stat-badge" id="photo-count-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+            <span id="photo-count-text">0 photos</span>
+          </span>
+          <span class="stat-badge storage-pill" id="storage-engine-badge" title="Bitcask Append-Only CAS">
+            <span class="pulse-indicator"></span>
+            Bitcask CAS
+          </span>
+        </div>
+
+        <div class="camera-filters-container" id="camera-filters">
+          <button class="filter-chip active" data-camera="ALL">All Cameras</button>
+          <!-- Dynamic camera chips will be injected here -->
+        </div>
+      </section>
+
+      <!-- Photos Gallery Stream -->
+      <section class="gallery-container" id="gallery-container">
+        <!-- Loading State Skeleton -->
+        <div class="gallery-skeletons" id="gallery-skeletons">
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+          <div class="skeleton-card"></div>
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state hidden" id="empty-state">
+          <div class="empty-icon-wrap">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+          </div>
+          <h2 class="empty-title">Your Vault is Empty</h2>
+          <p class="empty-desc">Upload high-resolution photos with automatic SHA-256 deduplication and Bitcask append-only indexing.</p>
+          <button class="btn btn-primary btn-lg" id="empty-upload-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Upload First Photo
+          </button>
+        </div>
+
+        <!-- No Search Results -->
+        <div class="no-results hidden" id="no-results">
+          <p>No photos found matching your search.</p>
+          <button class="btn btn-secondary btn-sm" id="reset-search-btn">Clear Filter</button>
+        </div>
+
+        <!-- Timeline Groups & Photo Grids (Injected Dynamically) -->
+        <div class="timeline-stream" id="timeline-stream"></div>
+      </section>
+    </main>
+
+    <!-- Mobile Floating Action Button (FAB) for Camera & Gallery Upload -->
+    <div class="mobile-fab-container" id="mobile-fab-container">
+      <button class="mobile-fab" id="mobile-fab-btn" title="Upload Photos" aria-label="Upload Photos">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19"/>
+          <line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Hidden Native File Inputs -->
+    <!-- 1. Standard multiple photo picker (desktop / mobile gallery) -->
+    <input type="file" id="file-input-multiple" multiple accept="image/jpeg,image/png" class="visually-hidden">
+    <!-- 2. Direct Mobile Camera Capture -->
+    <input type="file" id="file-input-camera" accept="image/jpeg,image/png" capture="environment" class="visually-hidden">
+
+    <!-- Global Drag & Drop Fullscreen Overlay -->
+    <div class="drag-drop-overlay hidden" id="drag-drop-overlay">
+      <div class="drag-drop-modal">
+        <div class="drag-drop-icon">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="17 8 12 3 7 8"/>
+            <line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+        </div>
+        <h3>Drop photos to store</h3>
+        <p>SHA-256 CAS Deduplication & Instant Append</p>
+      </div>
+    </div>
+
+    <!-- Upload Hub Modal / Bottom Sheet -->
+    <div class="modal-backdrop hidden" id="upload-modal">
+      <div class="modal-card upload-modal-card" id="upload-modal-content">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <div class="modal-icon-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            </div>
+            <div>
+              <h3 class="modal-title">Upload to Pixel Vault</h3>
+              <p class="modal-subtitle">JPEG & PNG supported • Chunked streaming zero-buffer</p>
+            </div>
+          </div>
+          <button class="icon-btn modal-close" id="close-upload-modal-btn" aria-label="Close">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+
+        <div class="upload-actions-panel">
+          <!-- Dropzone Area -->
+          <div class="dropzone-box" id="dropzone-area">
+            <div class="dropzone-illustration">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+            </div>
+            <p class="dropzone-text">Drag & drop photos here, or</p>
+            <div class="dropzone-btn-group">
+              <button class="btn btn-secondary btn-sm" id="select-files-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                Choose Photos
+              </button>
+              <button class="btn btn-secondary btn-sm mobile-camera-btn" id="open-camera-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                Take Photo
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upload Queue List -->
+        <div class="upload-queue-section hidden" id="upload-queue-section">
+          <div class="queue-header">
+            <span class="queue-title" id="queue-count-text">Upload Queue (0)</span>
+            <button class="btn-text" id="clear-completed-uploads-btn">Clear Finished</button>
+          </div>
+          <div class="upload-queue-list" id="upload-queue-list"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fullscreen Lightbox & Bitcask EXIF Inspector -->
+    <div class="lightbox-backdrop hidden" id="lightbox-modal">
+      <!-- Lightbox Header Controls -->
+      <div class="lightbox-header">
+        <div class="lightbox-info">
+          <span class="lightbox-counter" id="lightbox-counter">1 of 1</span>
+          <span class="lightbox-filename" id="lightbox-filename">photo.jpg</span>
+        </div>
+        <div class="lightbox-actions">
+          <button class="lightbox-btn" id="lightbox-info-toggle-btn" title="Toggle EXIF & Bitcask Inspector (I)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="12" y1="16" x2="12" y2="12"/>
+              <line x1="12" y1="8" x2="12.01" y2="8"/>
+            </svg>
+            <span class="desktop-only">Info</span>
+          </button>
+          <a class="lightbox-btn" id="lightbox-download-btn" download="photo.jpg" title="Download Full Resolution Original">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            <span class="desktop-only">Original</span>
+          </a>
+          <button class="lightbox-btn" id="lightbox-close-btn" title="Close (Esc)" aria-label="Close Lightbox">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Lightbox Main Stage -->
+      <div class="lightbox-stage" id="lightbox-stage">
+        <button class="lightbox-nav-btn prev-btn" id="lightbox-prev-btn" title="Previous (Left Arrow)" aria-label="Previous Photo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+
+        <div class="lightbox-image-wrapper" id="lightbox-image-wrapper">
+          <div class="lightbox-spinner" id="lightbox-spinner"></div>
+          <img id="lightbox-img" src="" alt="Pixel Vault Photo" class="lightbox-img hidden">
+        </div>
+
+        <button class="lightbox-nav-btn next-btn" id="lightbox-next-btn" title="Next (Right Arrow)" aria-label="Next Photo">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+
+      <!-- Slide-out Drawer / Mobile Bottom Sheet for EXIF & Bitcask Details -->
+      <aside class="lightbox-drawer" id="lightbox-drawer">
+        <div class="drawer-handle mobile-only" id="drawer-drag-handle"></div>
+        <div class="drawer-header">
+          <h4 class="drawer-title">Metadata & Engine Inspector</h4>
+          <button class="icon-btn drawer-close-btn desktop-only" id="drawer-close-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+
+        <div class="drawer-content" id="drawer-content">
+          <!-- EXIF Section -->
+          <div class="meta-section">
+            <div class="section-title-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+              Camera & Capture
+            </div>
+            <div class="meta-grid">
+              <div class="meta-item">
+                <span class="meta-label">Camera Model</span>
+                <span class="meta-val" id="meta-camera">--</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Date Taken (EXIF)</span>
+                <span class="meta-val" id="meta-taken-at">--</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Uploaded At</span>
+                <span class="meta-val" id="meta-uploaded-at">--</span>
+              </div>
+              <div class="meta-item full-width" id="meta-gps-row">
+                <span class="meta-label">GPS Coordinates</span>
+                <div class="gps-val-row">
+                  <span class="meta-val" id="meta-gps">None</span>
+                  <a id="meta-maps-link" href="#" target="_blank" rel="noopener noreferrer" class="btn-text btn-link hidden">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Open Map
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bitcask CAS Section -->
+          <div class="meta-section">
+            <div class="section-title-badge engine-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+              Bitcask Storage Engine
+            </div>
+            <div class="meta-grid">
+              <div class="meta-item full-width">
+                <span class="meta-label">Photo ID (UUID)</span>
+                <div class="hash-row">
+                  <code class="code-val" id="meta-photo-id">--</code>
+                  <button class="copy-btn" data-copy-target="meta-photo-id" title="Copy UUID">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="meta-item full-width">
+                <span class="meta-label">SHA-256 CAS Hash</span>
+                <div class="hash-row">
+                  <code class="code-val" id="meta-content-hash">--</code>
+                  <button class="copy-btn" data-copy-target="meta-content-hash" title="Copy Hash">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="meta-item">
+                <span class="meta-label">Log Segment</span>
+                <span class="meta-val font-mono" id="meta-segment-id">--</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Byte Offset & Length</span>
+                <span class="meta-val font-mono" id="meta-offset-length">--</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Admin & Engine Operations Modal -->
+    <div class="modal-backdrop hidden" id="admin-modal">
+      <div class="modal-card admin-modal-card">
+        <div class="modal-header">
+          <div class="modal-title-group">
+            <div class="modal-icon-badge admin-badge">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            </div>
+            <div>
+              <h3 class="modal-title">Bitcask Engine Operations</h3>
+              <p class="modal-subtitle">Crash-Safe Storage Maintenance & Snapshot Checkpoints</p>
+            </div>
+          </div>
+          <button class="icon-btn modal-close" id="close-admin-modal-btn" aria-label="Close">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+
+        <div class="admin-content">
+          <!-- Engine Status Card -->
+          <div class="engine-metrics-card">
+            <div class="metric-block">
+              <span class="metric-title">In-Memory Indexed Photos</span>
+              <span class="metric-val" id="admin-photo-count">0</span>
+            </div>
+            <div class="metric-block">
+              <span class="metric-title">Architecture</span>
+              <span class="metric-val text-accent">Bitcask + CAS</span>
+            </div>
+            <div class="metric-block">
+              <span class="metric-title">Target RAM Footprint</span>
+              <span class="metric-val text-green">&lt; 100 MB</span>
+            </div>
+          </div>
+
+          <!-- Action 1: Compactor -->
+          <div class="admin-action-card">
+            <div class="action-info">
+              <h4 class="action-heading">Segment Compaction</h4>
+              <p class="action-desc">Reclaims disk space on the mechanical HDD by merging closed segments and pruning obsolete updates & tombstones.</p>
+            </div>
+            <button class="btn btn-secondary" id="trigger-compact-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+              <span>Run Compaction</span>
+            </button>
+          </div>
+
+          <!-- Action 2: Snapshot -->
+          <div class="admin-action-card">
+            <div class="action-info">
+              <h4 class="action-heading">Index Snapshot Checkpoint</h4>
+              <p class="action-desc">Atomically dumps the in-memory index to <code class="code-inline">index-snapshot.bin</code> with log watermark for sub-second crash recovery.</p>
+            </div>
+            <button class="btn btn-secondary" id="trigger-snapshot-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+              <span>Save Snapshot</span>
+            </button>
+          </div>
+
+          <!-- Output Box for Admin Operations -->
+          <div class="admin-output-box hidden" id="admin-output-box">
+            <div class="output-header">
+              <span>Operation Results</span>
+              <button class="btn-text btn-xs" id="clear-admin-output-btn">Clear</button>
+            </div>
+            <pre class="output-console" id="admin-output-console"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Global Toast Notifications Container -->
+    <div class="toast-container" id="toast-container" aria-live="polite"></div>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
