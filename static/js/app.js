@@ -4,6 +4,20 @@
  */
 
 // ============================================================================
+// Global Image Error Fallback Handler (Prevents Infinite 404 Retry Loops)
+// ============================================================================
+window.__handleImgError = function(img, photoId) {
+  if (!img.dataset.triedFallback) {
+    img.dataset.triedFallback = '1';
+    img.src = '/photos/' + photoId + '/file';
+  } else {
+    img.onerror = null;
+    img.classList.add('img-missing');
+    img.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200' fill='none'%3E%3Crect width='200' height='200' fill='%230f172a'/%3E%3Cpath d='M70 80l15-15h30l15 15h20v60H50V80h20z' stroke='%23334155' stroke-width='4' stroke-linejoin='round'/%3E%3Ccircle cx='100' cy='110' r='20' stroke='%23334155' stroke-width='4'/%3E%3Cline x1='60' y1='60' x2='140' y2='140' stroke='%23ef4444' stroke-width='4' stroke-linecap='round'/%3E%3Ctext x='100' y='165' fill='%2394a3b8' font-family='sans-serif' font-size='12' font-weight='bold' text-anchor='middle'%3EBlob Missing%3C/text%3E%3C/svg%3E";
+  }
+};
+
+// ============================================================================
 // 1. Toast Notification Manager
 // ============================================================================
 class ToastManager {
@@ -320,8 +334,10 @@ class GalleryManager {
   }
 
   _renderPhotoCard(photo) {
-    const thumbUrl = `/photos/${photo.photo_id}/thumbnail`;
-    const fallbackUrl = `/photos/${photo.photo_id}/file`;
+    const hasThumb = photo.thumbnail_paths && photo.thumbnail_paths.length > 0;
+    const initialUrl = hasThumb 
+      ? `/photos/${photo.photo_id}/thumbnail` 
+      : `/photos/${photo.photo_id}/file`;
     const cameraText = photo.camera || 'Standard Camera';
     const dateFormatted = photo.taken_at 
       ? new Date(photo.taken_at).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })
@@ -330,10 +346,10 @@ class GalleryManager {
     return `
       <div class="photo-card" data-photo-id="${photo.photo_id}" tabindex="0" role="button" aria-label="View photo ${photo.photo_id}">
         <img class="photo-thumb" 
-             src="${thumbUrl}" 
+             src="${initialUrl}" 
              alt="${this._escapeHtml(cameraText)}"
              loading="lazy"
-             onerror="if(this.src !== '${fallbackUrl}') this.src='${fallbackUrl}';">
+             onerror="window.__handleImgError(this, '${photo.photo_id}')">
         <div class="card-overlay">
           <div class="card-top-badges">
             ${photo.gps ? '<span class="stat-badge storage-pill" title="Has GPS coordinates"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>' : ''}
