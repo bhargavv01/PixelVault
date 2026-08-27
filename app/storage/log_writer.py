@@ -55,6 +55,7 @@ class LogWriter:
         self._segment_counter: int = 0
         self._segment_name: str = ""
         self._lock_file = None
+        self._append_count: int = 0
 
         # Acquire single-writer lock
         self._acquire_writer_lock()
@@ -194,12 +195,36 @@ class LogWriter:
             length,
         )
 
+        # Track append count for snapshot triggering
+        self._append_count += 1
+
         # Check if rotation is needed
         current_size = self._segment_file.tell()
         if current_size >= self._max_segment_bytes:
             self._rotate_segment()
 
         return updated_meta
+
+    @property
+    def snapshot_due(self) -> bool:
+        """True when 1,000+ appends have occurred since last snapshot."""
+        return self._append_count >= 1000
+
+    def reset_snapshot_counter(self) -> None:
+        """Reset the append counter. Called after a snapshot is taken."""
+        self._append_count = 0
+
+    @property
+    def active_segment_name(self) -> str:
+        """The segment filename currently open for writing."""
+        return self._segment_name
+
+    @property
+    def active_segment_offset(self) -> int:
+        """Current byte offset in the active segment file."""
+        if self._segment_file is None:
+            return 0
+        return self._segment_file.tell()
 
     def close(self) -> None:
         """Close the active segment file and release the writer lock."""

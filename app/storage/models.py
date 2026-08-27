@@ -26,6 +26,7 @@ class PhotoMeta(BaseModel):
     camera: str | None = Field(default=None, description="EXIF camera model string.")
     gps: tuple[float, float] | None = Field(default=None, description="(lat, lon) from EXIF.")
     thumbnail_paths: list[str] = Field(default_factory=list, description="Paths to generated thumbnails.")
+    tombstone: bool = Field(default=False, description="Soft-delete marker. Compaction drops tombstoned records.")
     uploaded_at: datetime = Field(
         default_factory=lambda: datetime.now(timezone.utc),
         description="Server-side upload timestamp (UTC).",

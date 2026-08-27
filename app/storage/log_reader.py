@@ -141,6 +141,118 @@ class LogReader:
         )
 
     @staticmethod
+    def replay_segment_from_offset(
+        segment_path: str, start_offset: int
+    ) -> Iterator[PhotoMeta]:
+        """Replay a segment starting from a specific byte offset.
+
+        Used by snapshot-based startup to skip records before the watermark.
+        Seeks to ``start_offset``, then reads line-by-line with CRC32
+        validation as usual.
+
+        If the offset lands in the middle of a record (e.g., post-compaction
+        offset mismatch), the first readline() will return a partial JSON
+        fragment, the CRC32 check will fail, and replay stops safely — no
+        data corruption.
+
+        Args:
+            segment_path: Absolute path to the segment file.
+            start_offset: Byte offset to seek to before reading.
+
+        Yields:
+            PhotoMeta instances for each valid record after the offset.
+        """
+        segment_name = os.path.basename(segment_path)
+        records_read = 0
+
+        try:
+            with open(segment_path, "rb") as f:
+                f.seek(start_offset)
+
+                while True:
+                    line_offset = f.tell()
+                    line = f.readline()
+
+                    # EOF
+                    if not line:
+                        break
+
+                    # Skip empty lines
+                    stripped = line.strip()
+                    if not stripped:
+                        continue
+
+                    try:
+                        record = json.loads(stripped)
+                    except (json.JSONDecodeError, UnicodeDecodeError) as exc:
+                        logger.warning(
+                            "JSON decode error in %s at offset %d: %s. "
+                            "Stopping replay for this segment (may be "
+                            "stale watermark after compaction).",
+                            segment_name,
+                            line_offset,
+                            exc,
+                        )
+                        break
+
+                    # Extract and verify CRC32
+                    expected_crc = record.get("crc32")
+                    if expected_crc is None:
+                        logger.warning(
+                            "Record missing crc32 field in %s at offset %d. "
+                            "Stopping replay for this segment.",
+                            segment_name,
+                            line_offset,
+                        )
+                        break
+
+                    if not _verify_crc32(record, expected_crc):
+                        logger.warning(
+                            "CRC32 mismatch in %s at offset %d (expected %d). "
+                            "Possible torn write or stale watermark. "
+                            "Stopping replay. %d records recovered.",
+                            segment_name,
+                            line_offset,
+                            expected_crc,
+                            records_read,
+                        )
+                        break
+
+                    # Strip crc32 before building PhotoMeta
+                    record.pop("crc32", None)
+
+                    # Populate bookkeeping fields
+                    record["segment_id"] = segment_name
+                    record["offset"] = line_offset
+                    record["length"] = len(line)
+
+                    try:
+                        meta = PhotoMeta.model_validate(record)
+                    except Exception as exc:
+                        logger.warning(
+                            "Failed to parse PhotoMeta in %s at offset %d: %s. "
+                            "Stopping replay for this segment.",
+                            segment_name,
+                            line_offset,
+                            exc,
+                        )
+                        break
+
+                    records_read += 1
+                    yield meta
+
+        except FileNotFoundError:
+            logger.error("Segment file not found: %s", segment_path)
+            return
+
+        logger.info(
+            "Replayed %s from offset %d: %d records recovered.",
+            segment_name,
+            start_offset,
+            records_read,
+        )
+
+    @staticmethod
     def replay_all(log_dir: str = "/storage/logs") -> Iterator[PhotoMeta]:
         """Replay all segment files in chronological order.
 
